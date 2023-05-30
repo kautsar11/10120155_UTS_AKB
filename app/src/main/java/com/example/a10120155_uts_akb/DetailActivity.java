@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class DetailActivity extends AppCompatActivity {
-
+    // nim : 10120155
+// nama : kautsar teguh dwi putra
+// kelas : IF-4
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

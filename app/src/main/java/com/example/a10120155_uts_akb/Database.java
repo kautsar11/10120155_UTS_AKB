@@ -6,6 +6,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class Database extends SQLiteOpenHelper {
+    // nim : 10120155
+// nama : kautsar teguh dwi putra
+// kelas : IF-4
     private static final String DATABASE_NAME = "uts.db";
     private static final int DATABASE_VERSION = 1;
 

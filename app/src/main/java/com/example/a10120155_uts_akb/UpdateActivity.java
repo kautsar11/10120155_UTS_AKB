@@ -12,6 +12,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class UpdateActivity extends AppCompatActivity {
+    // nim : 10120155
+// nama : kautsar teguh dwi putra
+// kelas : IF-4
     protected Cursor cursor;
     Database database;
     Button buttonInsert;
