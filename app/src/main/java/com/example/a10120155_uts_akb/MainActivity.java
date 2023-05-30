@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -27,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
     String[] daftar;
     ListView listView;
-    Menu menu;
     protected Cursor cursor;
     Database database;
     public static MainActivity ma;
@@ -37,14 +37,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent pindah = new Intent(MainActivity.this, CreateActivity.class);
-                startActivity(pindah);
-            }
-        });
+//        FloatingActionButton fab = findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent pindah = new Intent(MainActivity.this, CreateActivity.class);
+//                startActivity(pindah);
+//            }
+//        });
 
         ma = this;
         database = new Database(this);
@@ -75,8 +75,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
         listView = findViewById(R.id.listView);
-        listView.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, daftar));
-        listView.setSelected(true);
+        if (listView == null) {
+            Log.e("MainActivity", "ListView is null");
+        } else {
+            listView.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, daftar));
+            listView.setSelected(true);
+
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
@@ -109,5 +113,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         ((ArrayAdapter) listView.getAdapter()).notifyDataSetInvalidated();
-    }
+    }}
 }
